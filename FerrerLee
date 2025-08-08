@@ -1,0 +1,16 @@
+#include <iostream>// input and output library
+using namespace std;// standard namespace for cin and cout
+
+int main (){
+    
+    int num1,num2,sum;// Integer Variables
+    
+    cout<<"Enter a number: ";//output enter number
+    cin >>num1;//User input number
+    cout<< "Enter another number: ";//output enter number
+    cin >>num2;//user input number 
+    sum = num1 + num2;//set the value of sum as num 1 + num 2
+    cout<<"The sum of the two numbers is: "<<sum;//output sum of numbers
+    
+    return 0;
+}
