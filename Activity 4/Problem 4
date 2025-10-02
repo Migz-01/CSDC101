@@ -1,0 +1,49 @@
+*/
+Problem 4: Bulk Purchase Discount
+
+Problem:
+Customers get discounts based on how many cups they buy:
+1–4 cups: No discount
+5–9 cups: 10% discount
+10+ cups: 20% discount
+Each cup is $1.
+
+Task:
+
+Write a program that:
+Ask how many cups the customer wants.
+Calculates the total cost with the correct discount.
+Outputs the final price.
+
+Sample Input:
+How many cups? 7
+
+Sample Output:
+Total cost: $6.30
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    float cups, discount, discount1 = 0, discount2 = 0.10, discount3 = 0.20;
+    
+    cout << " How many cups are there?: ";
+    cin >> cups;
+    
+    if (cups >= 1 && cups <= 4) {
+        discount = cups + discount1;
+        cout << " The discounted price is: $ " << discount << endl;
+        
+    } else if ( cups >= 5 && cups <=9 ) {
+        discount = cups * discount2;
+        cout << " The discounted price is: $ " << discount << endl;
+        
+    }else if ( cups >=10 ) {
+        discount = cups * discount3;
+        cout << " The discounted price is: $ " << discount << endl;
+    }
+    return 0;
+}
+    
