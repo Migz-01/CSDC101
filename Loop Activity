@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int m, l;
+    
+    for (int l = 1; l <= 10; l++) {
+        for ( m = 1; m <= l; m++) {
+            cout << " *";
+        }
+        cout << "\n";
+    }
+    return 0;
+    
+}
