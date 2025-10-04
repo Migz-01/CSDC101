@@ -1,0 +1,104 @@
+*/
+Problem 6: Switch problem 1 to 5
+Combine all problems using switch statement
+
+Sample Input:
+What problem do you want to see? 1
+
+Sample Output:
+*Basic pricing Decision Runs*
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+
+    cout << "=== Lemonade Stand Simulation ===" << endl;
+    cout << "1. Basic Pricing Decision" << endl;
+    cout << "2. Weather-Based Discounts" << endl;
+    cout << "3. Inventory  Check" << endl;
+    cout << "4. Bulk Purchase Discount" << endl;
+    cout << "5. Player Movement" << endl;
+    cout << " Switch problem 1 to 5: ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int money;
+        cout << "Where your money at bro: ";
+        cin >> money;
+
+        if (money >= 1.0) {
+            cout << "Enjoy the pure sourness of our delicious lemonade" << endl;
+        } else {
+            cout << "Sorry, you need more money. Agoi" << endl;
+        }
+
+    } else if (choice == 2) {
+        int temperature;
+        cout << "What do you think is the temperature? ";
+        cin >> temperature;
+
+        if (temperature >= 30) {
+            cout << "Damn It's hot! Lemonade costs $0.80 today." << endl;
+        } else {
+            cout << "Bro It's not hot! Lemonade costs $1.00" << endl;
+        }
+
+    } else if (choice == 3) {
+        int lemons, sugars;
+        cout << "Lemons: ";
+        cin >> lemons;
+        cout << "Sugars: ";
+        cin >> sugars;
+
+        if (lemons <= 0 || sugars <= 0) {
+            cout << "You can't make lemonade if it's zero or below that!" << endl;
+        } else {
+            cout << "You're ready to sell lemonade! You are now a businessman." << endl;
+        }
+
+    } else if (choice == 4) {
+        float cups, discount;
+        float discount1 = 0, discount2 = 0.10, discount3 = 0.20;
+
+        cout << "How many cups are there?: ";
+        cin >> cups;
+
+        if (cups >= 1 && cups <= 4) {
+            discount = cups + discount1;
+            cout << "The discounted price is: $ " << discount << endl;
+        } else if (cups >= 5 && cups <= 9) {
+            discount = cups * (1 - discount2);
+            cout << "The discounted price is: $ " << discount << endl;
+        } else if (cups >= 10) {
+            discount = cups * (1 - discount3);
+            cout << "The discounted price is: $ " << discount << endl;
+        }
+
+    } else if (choice == 5) {
+        int x = 0, y = 0;
+        string moves;
+
+        cout << "Enter movement sequence (W/A/S/D): ";
+        cin >> moves;
+
+        for (char move : moves) {
+            move = toupper(move);
+
+            if (move == 'W') y++;
+            else if (move == 'S') y--;
+            else if (move == 'A') x--;
+            else if (move == 'D') x++;
+            else cout << "Invalid move '" << move << "' ignored." << endl;
+        }
+
+        cout << "The location of the player is (" << x << ", " << y << ")" << endl;
+
+    } else {
+        cout << "Invalid choice. Please select a problem from 1 to 5 only." << endl;
+    }
+
+    return 0;
+}
